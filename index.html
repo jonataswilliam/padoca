@@ -6,9 +6,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/slider.css" />
+    
     <meta name="viewport" content="width=device-width"/>
     
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    
     
     <!-- http://getbootstrap.com/components/#glyphicons -->
     <!-- http://getbootstrap.com/javascript/#carousel -->
@@ -17,128 +21,18 @@
     <!-- https://github.com/matthieua/WOW -->
     <!--http://daneden.github.io/animate.css/-->
     
-    <style type="text/css">
-        .dropdown-menu{
-            /*background: #000;*/
-        }
-        
-        /*body {*/
-            
-        /*    font-size: 200%;*/
-        /*}*/
-            
-        body {
-            /*font-family: "proxima-nova",sans-serif;*/
-            font-family: 'Satisfy', cursive;
-            font-style: normal;
-            font-weight: 800;
-            overflow-x:hidden;
-        }
-        
-        .navbar-inverse {
-            /*background: url(img/bg-header.jpg);*/
-            /*border-color: #fcc;*/
-            
-        }
-        
-        .fullscreen {
-            width: 100%;
-            
-        }
-        
-        footer {
-            background: brown;
-            color:#fff;
-            padding:20px 0;
-            text-align: center;
-        }
-        
-        .carousel-inner>.item>img {
-            /*height: 400px;*/
-        }
-        
-        #carousel {
-            margin-top: 50px;
-            /*margin-bottom: 30px;*/
-            /*padding: 2px 2px;*/
-        }
-        
-        .carousel-sm >.item >img {
-            height: 250px;
-            border-radius: 15px;
-        }
-        
-        .navbar-fixed-top {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            height: 60px;
-            background: #FFF;
-            vertical-align: middle;
-            border-bottom: 4px solid brown;
-        }
-        
-        
-         @media (max-width: 975px) {
-            nav li {
-                
-                background: none repeat scroll 0 0 #FFF;
-                display: block;
-            }
-         }
-        
-        
-        .main-logo {
-            background-color: #fff;
-            background-image: linear-gradient(to bottom, #fff, #fff);
-            border-color: #fff #fff;
-            border-image: none;
-            border-bottom: 3px solid brown;
-            border-left: 3px solid brown;
-            border-right: 3px solid brown;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-            display: block;
-            left: 20px;
-            padding: 15px;
-            position: absolute;
-            text-align: center;
-            top: 0;
-        }
-        
-        header ul li a {
-            color: brown;
-            /*font-family: "proxima-nova",sans-serif;*/
-            font-family: 'Satisfy', cursive;
-            font-size: 0.9em;
-            font-style: normal;
-            font-weight: 800;
-            letter-spacing: 0.75px;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        
-        .sobre {
-            border-top: 4px solid brown;
-            /*background: url(img/background_sobre.jpg);*/
-            color: #000;
-            height: 150px;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            height: 100%;
-        }
-        
-        .prox-fornada {
-            padding: 0 50px;
-            width: 300px;
-            height: 50px;
-            border: 1px solid red;
-            vertical-align:middle;
-            display:table-cell;
-            
-        }
-                
-    </style>
+    
+    
+    <script type="text/javascript" src="js/functions.js"></script>
     
 </head>    
 <body>
+    
+    <!--<div class="ole">-->
+    <!--    <section id="jSplash">-->
+   	<!--        <div id="circle"></div>-->
+    <!--    </section>-->
+    <!--</div>-->
     <header>
         <!--<div class="container-fluid">-->
         <!--    <div class="row">-->
@@ -158,18 +52,17 @@
                 <div class="col-md-9">
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#sobre">Sobre nós</a></li>
                             <li>
-                                <a href="#" id="list-top" class="dropdown-toggle" data-toggle="dropdown">Cardápio <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#cardapio">Pães</a></li>
-                                    <li><a href="#cardapio">Doces</a></li>
-                                    <li><a href="#cardapio">Salgados</a></li>
-                                    <li><a href="#cardapio">Sopas</a></li>
-                                </ul>
+                                <a href="#cardapio">Cardápio</a>
+                                <!--<a href="#" id="list-top" class="dropdown-toggle" data-toggle="dropdown">Cardápio <span class="caret"></span></a>-->
+                                <!--<ul class="dropdown-menu">-->
+                                <!--    <li><a href="#cardapio">Pães</a></li>-->
+                                <!--    <li><a href="#cardapio">Doces</a></li>-->
+                                <!--    <li><a href="#cardapio">Salgados</a></li>-->
+                                <!--</ul>-->
                             </li>
-                           
+                           <!--<li><a href="#fornada">Próxima Fornada</a></li>-->
                             <li><a href="#avaliacao">Avaliação dos clientes</a></li>
                             <li><a href="#contato">Contato</a></li>
                         </ul>
@@ -189,10 +82,22 @@
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel" data-slide-to="1"></li>
                 <li data-target="#carousel" data-slide-to="2"></li>
+                <li data-target="#carousel" data-slide-to="3"></li>
+                <li data-target="#carousel" data-slide-to="4"></li>
+                <li data-target="#carousel" data-slide-to="5"></li>
             </ol>
             
             <div class="carousel-inner" role="list-box">
                 <div class="item active">
+                    <img src="img/banner_1.jpg" alt="doces" class="fullscreen"></img>
+                </div>
+                <div class="item">
+                    <img src="img/banner_2.jpg" alt="doces" class="fullscreen"></img>
+                </div>
+                <div class="item">
+                    <img src="img/banner_3.jpg" alt="doces" class="fullscreen"></img>
+                </div>
+                <div class="item">
                     <img src="img/banner_4.jpg" alt="doces" class="fullscreen"></img>
                 </div>
                 <div class="item">
@@ -208,150 +113,163 @@
        
         <div class="row sobre" id="sobre">
             <div class="col-md-12 text-center">
-                <div>
+                <div class="sobrenos-tit titulos">
                     <h2>Sobre nós</h2>    
                 </div>
-                
-                <div class="col-md-7">
-                    <figure>
-                        <img src="img/sobre_nos.png">
-                    </figure>
-                </div>
-                <div class="col-md-4 text-right">
-                    <p>A padaria maria-mole tem o que há de melhor em pães, salgados, doces e sopas.
-                    Oferecemos pães fresquinhos que saem a cada 10 minutos.
-                    Visando sempre oferecer o melhor para nossos clientes, oferecemos também refeições a La Carte.</p>
+                <div class="sobrenos-body">
+                    <div class="col-md-7 imagem">
+                        <figure>
+                            <img src="img/sobre_nos.png">
+                        </figure>
+                    </div>
+                    <div class="col-md-4 text-right" id="descricao-fornada">
+                        <p>A padaria maria-mole tem o que há de melhor em pães, salgados, doces e sopas.
+                        Oferecemos pães fresquinhos que saem a cada 15 minutos.
+                        Visando sempre oferecer o melhor para nossos clientes, oferecemos também refeições a La Carte.</p>
+                    </div>
                 </div>
             </div>
         </div> <!-- row --> 
         
-                <div class="prox-fornada">
-                    PRÓXIMA FORNADA EM
-                </div>
         
-        <div class="container-fluid">
+        <div class="row" id="cardapio">
+            <div class="col-md-12 text-center">
+                <div class="cardapio_tit titulos">
+                    <h2>Cardápio</h2>    
+                </div>
+            </div>
             
-            
-            <div class="row" id="cardapio">
-                <div class="col-md-12 text-center">
-                    <h2>Cardapio</h2>
-                    <div class="col-md-3 thumbnail">
-                        <h4>Pães</h4>
-                        <div id="carousel-paes" class="carousel slide" data-ride="carousel">
-                        
-                            <div class="carousel-inner carousel-sm" role="list-box">
-                                <div class="item active">
-                                    <img src="img/paes.png" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/paes_2.jpg" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/paes_3.jpg" alt="doces"></img>
-                                </div>
-                            </div>
-                            <a href="#carousel-paes" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                            <a href="#carousel-paes" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                        
-                        </div>
+         
+            <div class="col-md-3">
+                <!--<ul class="nav nav-tabs nav-justified abas">-->
+                <ul class="vertical-tabs">
+                    <li role="presentation" class="li-abas" href='#paes' aria-controls="paes" role="tab" data-toggle="tab">PÃES</li>
+                    <li role="presentation" class="li-abas" href='#doces' aria-controls="doces" role="tab" data-toggle="tab">DOCES</li>
+                    <li role="presentation" class="li-abas" href='#salgados' aria-controls="salgados" role="tab" data-toggle="tab">SALGADOS</li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="paes">
+                        <ul class='item-cardapio'>
+                            <li><img class="img-cardapio" src="img/paes.png" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes.png" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
+                        </ul>
                     </div>
-                    
-                    <div class="col-md-3 thumbnail">
-                        <h4>Doces</h4>
-                        <div id="carousel-doces" class="carousel slide" data-ride="carousel">
-                        
-                            <div class="carousel-inner carousel-sm" role="list-box">
-                                <div class="item active">
-                                    <img src="img/doces_1.jpeg" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/doces_2.jpg" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/doces_3.jpg" alt="doces"></img>
-                                </div>
-                            </div>
-                            <a href="#carousel-doces" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                            <a href="#carousel-doces" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                        </div>
+                    <div role="tabpanel" class="tab-pane fade" id="doces">
+                        <ul class='item-cardapio'>
+                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
+                        </ul>
                     </div>
-                    
-                    
-                    <div class="col-md-3 thumbnail">
-                        <h4>Salgados</h4>
-                        <div id="carousel-salgados" class="carousel slide" data-ride="carousel">
-                        
-                            <div class="carousel-inner carousel-sm" role="list-box">
-                                <div class="item active">
-                                    <img src="img/salgados_1.png" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/salgados_1.jpg" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/salgados_1.jpg" alt="doces"></img>
-                                </div>
-                            </div>
-                            <a href="#carousel-salgados" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                            <a href="#carousel-salgados" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                        
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 thumbnail">
-                        <h4>Sopas</h4>
-                        <div id="carousel-sopas" class="carousel slide" data-ride="carousel">
-                        
-                            <div class="carousel-inner carousel-sm" role="list-box">
-                                <div class="item active">
-                                    <img src="img/paes.png" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/paes_2.jpg" alt="doces"></img>
-                                </div>
-                                <div class="item">
-                                    <img src="img/paes_3.jpg" alt="doces"></img>
-                                </div>
-                            </div>
-                            <a href="#carousel-sopas" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                            <a href="#carousel-sopas" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                        
-                        </div>
+                    <div role="tabpanel" class="tab-pane fade" id="salgados">
+                        <ul class='item-cardapio'>
+                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
+                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
+                        </ul>
                     </div>
                 </div>
-            </div> <!-- row --> 
-            <hr>
-            <div class="row" id="avaliacao">
-                <div class="col-md-12">
-                    <h2>Avaliação de nossos clientes</h2>
-                    <div class="">
-                        
-                    </div>
-                    
+            </div>
+            <br>
+            <br>
+        </div> <!-- row --> 
+        
+        <!-- <div class="row" id="fornada">-->
+        <!--    <div class="col-md-12 col-md-6">-->
+                <!--<div>-->
+                <!--    <p>Fique ligado para saber sempre quando a próxima fornada de pães sairá e tenha pães fresquinhos</p>-->
+                <!--</div>-->
+        <!--    </div>-->
+        <!--    <div class="col-xs- 12 col-md-6">-->
+        <!--        <div class="pai-prox-fornada">-->
+        <!--            <div class="prox-fornada">-->
+        <!--                PRÓXIMA FORNADA EM-->
+        <!--            </div>-->
+        <!--            <div class="prox-prox-fornada-body">-->
+        <!--                <h2>15:00</h2>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+        
+        <style type="text/css">
+            .avaliacao li {
+                background: #000;
+                height: 10px;
+            }
+        </style>
+        
+        
+        <div class="row" id="avaliacao">
+            <div class="col-md-12">
+                <div class="titulos avaliacao-tit text-center">
+                    <h2>Avaliações</h2>    
                 </div>
-            </div> <!-- row -->
+                <div class="avaliacao-body">
+                    <div id="carousel2" class="carousel slide" data-ride="carousel">
+                        <!-- Indicadores -->
+                        <ol class="carousel-indicators avaliacao">
+                            <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel2" data-slide-to="1"></li>
+                            <li data-target="#carousel2" data-slide-to="2"></li>
+                        </ol>
+                        
+                        <div class="carousel-inner" role="list-box">
+                            <div class="item active text-center">
+                                <p>Lugar excelente para estar com a família.</p>
+                            </div>
+                            <div class="item text-center">
+                                <p>Lugar excelente para estar com a família.</p>
+                            </div>
+                            <div class="item text-center">
+                                <p>Lugar excelente para estar com a família.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#carousel2" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a href="#carousel2" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row -->
+
+        
+
             
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Contato</h2>
-                    <div class="">
-                        
-                    </div>
-                    
-                </div>
-            </div> <!-- row -->
-        </div>
+            
+
+
+            
+     
+
+        
     </main>
+    
+    <footer>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Contato</h2>
+                <div class="">
+                        
+                </div>
+                    
+            </div>
+        </div> <!-- row -->
+        <p>Avenida Paulista n 1</p>
+        <p>(11) 2239-1234</p>
+    </footer>
     
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     
-    <footer>
-        <p>Avenida Paulista n 1</p>
-        <p>(11) 2239-1234</p>
-    </footer>
+
     
     <script>
         $(function () {
