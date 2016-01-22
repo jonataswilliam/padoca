@@ -138,12 +138,16 @@
 /*}*/
     
 body {
-    /*font-family: "proxima-nova",sans-serif;*/
     font-family: 'Bree Serif', serif;
-    /*font-family: 'Open Sans', sans-serif;*/
     font-style: normal;
     font-weight: 800;
     overflow-x:hidden;
+    position: relative;
+}
+
+.inicio {
+    margin: 0 0;
+    padding: 0 0;
 }
 
 img {
@@ -155,7 +159,13 @@ img {
     /*border-color: #fcc;*/
 }
 
-.nav>li>a:hover {
+.nav>li>a {
+    transition-duration: 0.7s;
+    transition-timing-function: ease-out;
+}
+
+.nav>li>a:hover, 
+.nav>li>a:focus{
     text-decoration: none;
     background: brown;
     color: white;
@@ -218,6 +228,7 @@ footer {
     padding: 15px;
     position: absolute;
     text-align: center;
+    margin: 0 50px;
     top: 0;
 }
 
@@ -329,7 +340,7 @@ header ul li a {
     color: white;
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
     margin-bottom: 50px;
-    transform: SkewX(-10deg) translate(-10px);
+    transform: SkewX(-10deg) translate(-30px);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -354,11 +365,8 @@ header ul li a {
 #fornada {
     background: #3a1445;
     padding: 60px 0;
-    /*font-family: "proxima-nova",sans-serif;*/
     color: #fff;
     font-size: 2.0rem;
-    /*text-transform: upperCase;*/
-    
 }
 
 #descricao-fornada {
@@ -368,8 +376,6 @@ header ul li a {
 
 #cardapio {
     background: #3a1445;
-    
-    
 }
 
 .cardapio_tit {
@@ -407,7 +413,7 @@ header ul li a {
     width: 350px;
 }
 
-.li-abas active {
+.vertical-tabs .li-ativado {
     background: orange;
     color: #3a1445;
     width: 350px;
@@ -460,6 +466,11 @@ header ul li a {
 .avaliacao-tit {
     text-transform: uppercase;
     
+}
+
+.avaliacao li {
+    background: #000;
+    height: 10px;
 }
 
 .titulos h2 {
