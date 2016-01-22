@@ -139,7 +139,8 @@
     
 body {
     /*font-family: "proxima-nova",sans-serif;*/
-    font-family: 'Satisfy', cursive;
+    font-family: 'Bree Serif', serif;
+    /*font-family: 'Open Sans', sans-serif;*/
     font-style: normal;
     font-weight: 800;
     overflow-x:hidden;
@@ -263,8 +264,8 @@ header ul li a {
 
 /******************* Titulos **********************************/
 .sobre {
+    
     border-top: 4px solid brown;
-    background: url(img/bg-sobrenos.jpg);
     color: #000;
     height: 150px;
     padding-top: 50px;
@@ -280,7 +281,7 @@ header ul li a {
     margin: 0 auto;
     background: orange;
     transform: rotate(-5deg);
-    font-family: "proxima-nova",sans-serif;
+    font-family: "proxima-nova", sans-serif;
     font-size: 15px;
     
 }
@@ -329,7 +330,7 @@ header ul li a {
 
 
 .sobrenos-body {
-    /*background: #fff;*/
+    font-family: 'Satisfy', cursive;
     padding: 60px 0;
     color: black;
     /*margin: -80px 0 0 0;*/
@@ -379,62 +380,80 @@ header ul li a {
 }
 
 .vertical-tabs li {
-    width: 350px;
+    width: 330px;
     transform: translate(-55px);
-    padding-left: 100px;
+    padding-left: 50px;
     border: solid 2px #3a1445;
     font-family:'Bree Serif', serif;
     background: #1C1414;
-    /*background: orange;*/
     border-radius: 5px;
+    font-size: 2.5em;
+    color: orange;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
 }
 
 
-.vertical-tabs li:hover,
-.vertical-tabs li:focus {
+.vertical-tabs li:hover {
     cursor: pointer;
-    background: #1C1414;
     background: orange;
     color: #3a1445;
-    
-    -webkit-animation: mymove 5s infinite;
-    /*transform: SkewX(-5deg);*/
-    
+    width: 350px;
 }
 
-.vertical-tabs li{
-    font-size: 2.5em;
+li-abas active {
+    background: orange;
     color: #3a1445;
-    color: orange;
-    margin-right: 50px;
+    width: 350px;
+}
+
+#contato {
+    background: brown;
+    font-family: 'Bree Serif', serif;
+    padding-bottom: 20px;
+    color: white;
+    
+}
+
+.dados-contato {
+    margin: 50px 0;
+}
+
+.contato-body {
+    margin: 40px 0;
+}
+
+.link-sociais li {
+    display: inline-block;
+}
+
+.facebook-icon {
+    border: 1px solid white;
+}
+
+.sociais-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 1px;
+    margin: 5px 25px 0 0;
 }
 
 
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes mymove {
-    from {transform: SkewX(0deg);}
-    to {transform: SkewX(-5deg);}
-}
-
-@keyframes mymove {
-    from {transform: SkewX(0deg);}
-    to {transform: SkewX(-5deg);}
+.contato-bold {
+    font-size: 1.1em;
 }
 
 #avaliacao {
-    background: url(img/bg-sobrenos.jpg);
+    background: #FFF;
     font-family: 'Bree Serif', serif;
-    height: 200px;
+    margin-bottom: 20px;
+    /*height: 200px;*/
 }
 
 .avaliacao-tit {
     text-transform: uppercase;
     
-}
-
-.avaliacao-tit > h2 {
-    font-size: 91px;
 }
 
 .titulos h2 {
@@ -465,10 +484,45 @@ header ul li a {
     
 }
 
+.div-img-cardapio {
+    background: orange;
+    width: 100%;
+    border: solid 5px #1C1414;
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
 .img-cardapio {
-    width: 180pxpx;
-    height: 150px;
-    margin: 30px;
-    border: 2px orange solid;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+.img-cardapio:hover {
+    transform: scale(1.1);
+}
+
+.carousel-legend {
+    padding: 5px 5px 15px 15px;
+    color: #FFF;
+    background: #1C1414;
+    text-align: left;
+    margin: 0;
+    opacity: 1;
+    letter-spacing: 0.1rem;
+    font-weight: 0.1rem;
+    font-style: normal;
     
+}
+
+.carousel-inner>.item>img {
+    max-height: 750px;
+}
+
+.div-img-cardapio .carousel-inner>.item>img {
+    max-height: 450px;
+}
+
+.mapa {
+    border: solid 10px #E2DED4;
+    /*border-radius: 10px;*/
 }

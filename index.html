@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/slider.css" />
+    <link rel="stylesheet" href="css/scrolling-nav.css" />
     
     <meta name="viewport" content="width=device-width"/>
     
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     
     
     <!-- http://getbootstrap.com/components/#glyphicons -->
@@ -21,9 +23,9 @@
     <!-- https://github.com/matthieua/WOW -->
     <!--http://daneden.github.io/animate.css/-->
     
-    
-    
     <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/scrolling-nav.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
     
 </head>    
 <body>
@@ -45,16 +47,16 @@
             <div class="container">
                 <div class="col-md-3 right">
                     <div class="navbar-header">
-                        <a href="#" class="main-logo"><img class="fullscreen" src="img/logo_mm.jpg"> </a> <!-- <img class="fullscreen" src="img/logo_mm.jpg"> -->
+                        <a href="#carousel" class="page-scroll main-logo"><img class="fullscreen" src="img/logo_mm.jpg"> </a> <!-- <img class="fullscreen" src="img/logo_mm.jpg"> -->
                         <button class="navbar-toggle " type="button" data-target=".navbar-collapse" data-toggle="collapse"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="#sobre">Sobre nós</a></li>
+                            <li><a class="page-scroll" href="#sobre">Sobre nós</a></li>
                             <li>
-                                <a href="#cardapio">Cardápio</a>
+                                <a class="page-scroll" href="#cardapio">Cardápio</a>
                                 <!--<a href="#" id="list-top" class="dropdown-toggle" data-toggle="dropdown">Cardápio <span class="caret"></span></a>-->
                                 <!--<ul class="dropdown-menu">-->
                                 <!--    <li><a href="#cardapio">Pães</a></li>-->
@@ -63,8 +65,8 @@
                                 <!--</ul>-->
                             </li>
                            <!--<li><a href="#fornada">Próxima Fornada</a></li>-->
-                            <li><a href="#avaliacao">Avaliação dos clientes</a></li>
-                            <li><a href="#contato">Contato</a></li>
+                            <li><a class="page-scroll" href="#contato">Contato</a></li>
+                            <li><a class="page-scroll" href="#avaliacao">Avaliação dos clientes</a></li>
                         </ul>
                        
                     </div>
@@ -146,33 +148,313 @@
                     <li role="presentation" class="li-abas" href='#paes' aria-controls="paes" role="tab" data-toggle="tab">PÃES</li>
                     <li role="presentation" class="li-abas" href='#doces' aria-controls="doces" role="tab" data-toggle="tab">DOCES</li>
                     <li role="presentation" class="li-abas" href='#salgados' aria-controls="salgados" role="tab" data-toggle="tab">SALGADOS</li>
+                    <li role="presentation" class="li-abas" href='#massas' aria-controls="massas" role="tab" data-toggle="tab">MASSAS</li>
+                    <li role="presentation" class="li-abas" href='#confeitaria' aria-controls="confeitaria" role="tab" data-toggle="tab">CONFEITARIA</li>
+                    <li role="presentation" class="li-abas" href='#saladas' aria-controls="saladas" role="tab" data-toggle="tab">SALADAS</li>
+                    <li role="presentation" class="li-abas" href='#bebidas' aria-controls="bebidas" role="tab" data-toggle="tab">BEBIDAS</li>
                 </ul>
             </div>
             <div class="col-md-9">
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="paes">
-                        <ul class='item-cardapio'>
-                            <li><img class="img-cardapio" src="img/paes.png" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes.png" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
-                        </ul>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="doces">
-                        <ul class='item-cardapio'>
-                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_2.jpg" alt="doces"></img></li>
-                        </ul>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="salgados">
-                        <ul class='item-cardapio'>
-                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
-                            <li><img class="img-cardapio" src="img/paes_3.jpg" alt="doces"></img></li>
-                        </ul>
+                <div class='div-img-cardapio'>
+                    <div class="tab-content">
+                        
+                        <!----------------------- Pães --------------------->
+                        <div role="tabpanel" class="tab-pane fade in active" id="paes">
+                            <div id="carousel-cardapio" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="list-box">
+                                    <div class="item active">
+                                        <img src="img/paes.png" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Pães Nome</h2>
+                                            <p>Descrição Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/paes_2.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Pães nome</h2>
+                                            <p>Descrição Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/paes_3.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Pães Nome</h2>
+                                            <p>Descrição Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/paes_4.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Pães Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#carousel-cardapio" class="carousel-control left" data-slide="prev"></a>
+                                <a href="#carousel-cardapio" class="carousel-control right" data-slide="next"></a>
+                                
+                            </div>
+                        </div>
+                        
+                        <!----------------------- Doces --------------------->
+                        <div role="tabpanel" class="tab-pane fade" id="doces">
+                            <div id="carousel-cardapio-doces" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="list-box">
+                                    <div class="item active">
+                                        <img src="img/doces_1.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Doce Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/doces_2.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Doce Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/doces_3.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Doce Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/doces_4.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Doce Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#carousel-cardapio-doces" class="carousel-control left" data-slide="prev"></a>
+                                <a href="#carousel-cardapio-doces" class="carousel-control right" data-slide="next"></a>
+                            </div>                            
+                        </div>
+                        
+                        <!----------------------- Salgados --------------------->
+                        <div role="tabpanel" class="tab-pane fade" id="salgados">
+                            <div id="carousel-cardapio-salgados" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="list-box">
+                                    <div class="item active">
+                                        <img src="img/salgados_1.jpg" alt="doces" class="fullscreen img-cardapio"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salgados Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/salgados_2.jpg" alt="doces" class="fullscreen img-cardapio"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salgados Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/salgados_3.jpg" alt="doces" class="fullscreen img-cardapio"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salgados Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/salgados_4.jpg" alt="doces" class="fullscreen img-cardapio"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salgados Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#carousel-cardapio-salgados" class="carousel-control left" data-slide="prev"></a>
+                                <a href="#carousel-cardapio-salgados" class="carousel-control right" data-slide="next"></a>
+                            </div>
+                        </div>
+                        
+                        <!----------------------- Massas --------------------->
+                        <div role="tabpanel" class="tab-pane fade" id="massas">
+                            <div id="carousel-cardapio-massas" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="list-box">
+                                    <div class="item active">
+                                        <img src="img/massas_1.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Massas nome</h2>
+                                            <p>Descricão mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/massas_2.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Massas nome</h2>
+                                            <p>Descricão mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/massas_3.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Massas nome</h2>
+                                            <p>Descricão mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#carousel-cardapio-massas" class="carousel-control left" data-slide="prev"></a>
+                                <a href="#carousel-cardapio-massas" class="carousel-control right" data-slide="next"></a>
+                            </div>
+                        </div>
+                        
+                        <!----------------------- Confeitaria --------------------->
+                        <div role="tabpanel" class="tab-pane fade" id="confeitaria">
+                            <div id="carousel-cardapio-confeitaria" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="list-box">
+                                    <div class="item active">
+                                        <img src="img/confeitaria_1.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bolos Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/confeitaria_2.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bolos Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/confeitaria_3.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bolos Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/confeitaria_4.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bolos Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="item">
+                                        <img src="img/confeitaria_5.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bolos Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/confeitaria_6.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bolos Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#carousel-cardapio-confeitaria" class="carousel-control left" data-slide="prev"></a>
+                                <a href="#carousel-cardapio-confeitaria" class="carousel-control right" data-slide="next"></a>
+                            </div>
+                        </div>
+                        
+                        <!----------------------- Saladas --------------------->
+                        <div role="tabpanel" class="tab-pane fade" id="saladas">
+                            <div id="carousel-cardapio-saladas" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="list-box">
+                                    <div class="item active">
+                                        <img src="img/salada_1.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salada nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/salada_2.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salada nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/salada_3.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salada nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/salada_4.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salada nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="item">
+                                        <img src="img/salada_5.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salada nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/salada_6.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Salada nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#carousel-cardapio-saladas" class="carousel-control left" data-slide="prev"></a>
+                                <a href="#carousel-cardapio-saladas" class="carousel-control right" data-slide="next"></a>
+                            </div>
+                        </div>
+                        
+                        <!----------------------- Bebidas --------------------->
+                        <div role="tabpanel" class="tab-pane fade" id="bebidas">
+                            <div id="carousel-cardapio-bebidas" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="list-box">
+                                    <div class="item active">
+                                        <img src="img/bebidas_2.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bebida Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/bebidas_3.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bebida Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/bebidas_4.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bebida Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/bebidas_5.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bebida Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="item">
+                                        <img src="img/bebidas_6.jpg" alt="doces" class="fullscreen"></img>
+                                        <div class="carousel-legend">
+                                            <h2>Bebida Nome</h2>
+                                            <p>Descrição mussum ipsum cacilds, vidis litro abertis. consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#carousel-cardapio-bebidas" class="carousel-control left" data-slide="prev"></a>
+                                <a href="#carousel-cardapio-bebidas" class="carousel-control right" data-slide="next"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -206,6 +488,41 @@
         </style>
         
         
+        <div class="row" id="contato">
+            <div class="col-md-12">
+                <div class="titulos avaliacao-tit text-center">
+                    <h2>Contato</h2>
+                </div>
+                 <div class="contato-body">
+                    <div class="row">
+                        <div class="col-md-7 text-center">
+                            <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4654494095216!2d-46.76065378533776!3d-23.551721167120743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceff5815e7f8f1%3A0x57f518b50ed6f499!2sMaria+Mole+Padaria!5e0!3m2!1spt-BR!2sbr!4v1453403091507" width="600" height="450" frameborder="0" allowfullscreen></iframe>                                
+                        </div>
+                        <div class="col-md-4 text-left dados-contato">
+                            <p><span class="contato-bold">ENDEREÇO:&nbsp;</span> Av. Martin Luther King, 2584 - Umuarama, Osasco - SP</p>
+                            <p><span class="contato-bold">TELEFONE:&nbsp; </span> (11) 3683-7344</p>
+                            <p><span class="contato-bold">HORÁRIO DE FUNCIONAMENTO:&nbsp;</span> Todos os dias das 05h30 às 22h00</p>
+                            <br>
+                            <aside>
+                                <nav>
+                                    <ul class="link-sociais">
+                                        <li><a href="https://pt-br.facebook.com/MariaMolePadaria" title="Facebook" class="sociais-icon facebook-icon" target="_blank"><img src="img/facebook.png" alt="Facebook"></img></a></li>
+                                        <li><a href="https://kekanto.com.br/biz/maria-mole-padaria" title="Kekanto" class="sociais-icon" target="_blank"><img src="img/kekanto.png" alt="Kekanto"></img></a></li>
+                                    </ul>
+                                </nav>
+                            </aside>
+                                
+                        </div>    
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <!-- row -->
+        
+        
+
+        
+        
         <div class="row" id="avaliacao">
             <div class="col-md-12">
                 <div class="titulos avaliacao-tit text-center">
@@ -214,11 +531,11 @@
                 <div class="avaliacao-body">
                     <div id="carousel2" class="carousel slide" data-ride="carousel">
                         <!-- Indicadores -->
-                        <ol class="carousel-indicators avaliacao">
-                            <li data-target="#carousel2" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel2" data-slide-to="1"></li>
-                            <li data-target="#carousel2" data-slide-to="2"></li>
-                        </ol>
+                        <!--<ol class="carousel-indicators avaliacao">-->
+                        <!--    <li data-target="#carousel2" data-slide-to="0" class="active"></li>-->
+                        <!--    <li data-target="#carousel2" data-slide-to="1"></li>-->
+                        <!--    <li data-target="#carousel2" data-slide-to="2"></li>-->
+                        <!--</ol>-->
                         
                         <div class="carousel-inner" role="list-box">
                             <div class="item active text-center">
@@ -238,38 +555,15 @@
                 </div>
             </div>
         </div> <!-- row -->
-
-        
-
-            
-            
-
-
-            
-     
-
         
     </main>
     
     <footer>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Contato</h2>
-                <div class="">
-                        
-                </div>
-                    
-            </div>
-        </div> <!-- row -->
-        <p>Avenida Paulista n 1</p>
-        <p>(11) 2239-1234</p>
+        <p>©<label id='data'>2016</label> PADARIA MARIA MOLE TODOS OS DIREITOS RESERVADOS BY BRAIN & MIND</p>
     </footer>
-    
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    
-
     
     <script>
         $(function () {
