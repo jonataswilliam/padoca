@@ -155,6 +155,12 @@ img {
     /*border-color: #fcc;*/
 }
 
+.nav>li>a:hover {
+    text-decoration: none;
+    background: brown;
+    color: white;
+}
+
 .fullscreen {
     width: 100%;
     
@@ -401,7 +407,7 @@ header ul li a {
     width: 350px;
 }
 
-li-abas active {
+.li-abas active {
     background: orange;
     color: #3a1445;
     width: 350px;
@@ -417,6 +423,7 @@ li-abas active {
 
 .dados-contato {
     margin: 50px 0;
+    padding: 0 25px;
 }
 
 .contato-body {
@@ -438,7 +445,6 @@ li-abas active {
     border-radius: 1px;
     margin: 5px 25px 0 0;
 }
-
 
 .contato-bold {
     font-size: 1.1em;
@@ -474,9 +480,9 @@ li-abas active {
     color: orange;
 }
 
- .li-abas {
-    color: orange;
-}
+/* .li-abas {*/
+/*    color: orange;*/
+/*}*/
 
 .item-cardapio li {
     list-style: none;
